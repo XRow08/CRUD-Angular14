@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Adicionar Colaborador</h1>
+<div mat-dialog-content>
+  <form [formGroup]="colaboradorForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do Colaborador</mat-label>
+      <input formControlName="colaboradorNome" matInput placeholder="Nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cargo</mat-label>
+      <mat-select formControlName="category" placeholder="category">
+        <mat-option value="Recepcionista">Recepcionista</mat-option>
+        <mat-option value="RecepFolg">Recepcionista folguista</mat-option>
+        <mat-option value="Camareira">Camareira</mat-option>
+        <mat-option value="Lavadeira">Lavadeira</mat-option>
+        <mat-option value="Copeira">Copeira</mat-option>
+        <mat-option value="Folguista">Folguista</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Data de Admissão</mat-label>
+      <input formControlName="data" matInput [matDatepicker]="picker">
+      <mat-hint></mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salário</mat-label>
+      <input formControlName="salario" matInput type="number" placeholder="Salario">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição (Opcional)</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+  <button style="margin-left: 210px;" mat-raised-button color="primary" (click)="addColaborador()">{{actionBtn}}</button>
+</div>
