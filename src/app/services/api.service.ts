@@ -9,17 +9,17 @@ export class ApiService {
   constructor( private http : HttpClient) { }
 
   postColaborador(data : any){
-    return this.http.post<any>("http://localhost:3000/colaboradorList/", data);
+    return this.http.post<any>("https://angular-14-crud.herokuapp.com/colaboradorList/", data);
   }
 
   getColaborador(){
-    return this.http.get<any>("http://localhost:3000/colaboradorList/");
+    return this.http.get<any>("https://angular-14-crud.herokuapp.com/colaboradorList/");
   }
 
   putColaborador(data:any,id : number){
-    return this.http.put<any>("http://localhost:3000/colaboradorList/"+id, data);
+    return this.http.put<any>("https://angular-14-crud.herokuapp.com/colaboradorList/"+id, data);
   }
   deleteColaborador(id:number){
-    return this.http.delete<any>("http://localhost:3000/colaboradorList/"+id);
+    return this.http.delete<any>("https://angular-14-crud.herokuapp.com/colaboradorList/"+id);
   }
 }
